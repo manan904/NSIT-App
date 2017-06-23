@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1097177412824-kc59mr23t5cjlhnga206umlscr15nnms.apps.googleusercontent.com</string>
+	<string>590567487392-v80p030kf1d3ar5g863dtrcll9otho8u.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1097177412824-kc59mr23t5cjlhnga206umlscr15nnms</string>
+	<string>com.googleusercontent.apps.590567487392-v80p030kf1d3ar5g863dtrcll9otho8u</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDx4zkbK6AjCVGTKYTP-pEo-AViDQ1di4o</string>
+	<string>AIzaSyAsDINUKV3CUAe85-qRPMSSB1zyP-aaaUk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1097177412824</string>
+	<string>590567487392</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.Manan-Manwani.iShopList</string>
+	<string>com.Manan-Manwani.NSITApp</string>
 	<key>PROJECT_ID</key>
-	<string>ishoplist-42f8f</string>
+	<string>nsit-app-6846e</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ishoplist-42f8f.appspot.com</string>
+	<string>nsit-app-6846e.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1097177412824:ios:53e0b0028e984dab</string>
+	<string>1:590567487392:ios:9e994cd7cfe678be</string>
 	<key>DATABASE_URL</key>
-	<string>https://ishoplist-42f8f.firebaseio.com</string>
+	<string>https://nsit-app-6846e.firebaseio.com</string>
 </dict>
 </plist>

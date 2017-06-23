@@ -217,6 +217,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J2c-2W-pRa">
+                                <rect key="frame" x="37" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -224,6 +228,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="KYO-ro-FGZ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="img" destination="J2c-2W-pRa" id="Avt-TS-WPr"/>
                         <outlet property="menu" destination="KYO-ro-FGZ" id="xcG-F9-7r7"/>
                     </connections>
                 </viewController>
