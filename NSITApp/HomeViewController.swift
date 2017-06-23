@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
+    @IBOutlet weak var barButtonMenu: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        barButtonMenu.target = revealViewController()
+        barButtonMenu.action = #selector(SWRevealViewController.revealToggle(_:))
+        
     }
 
     override func didReceiveMemoryWarning() {

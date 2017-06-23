@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1097177412824-kc59mr23t5cjlhnga206umlscr15nnms.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1097177412824-kc59mr23t5cjlhnga206umlscr15nnms</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDx4zkbK6AjCVGTKYTP-pEo-AViDQ1di4o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1097177412824</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Manan-Manwani.iShopList</string>
+	<key>PROJECT_ID</key>
+	<string>ishoplist-42f8f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ishoplist-42f8f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1097177412824:ios:53e0b0028e984dab</string>
+	<key>DATABASE_URL</key>
+	<string>https://ishoplist-42f8f.firebaseio.com</string>
+</dict>
+</plist>
