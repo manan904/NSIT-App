@@ -17,7 +17,7 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        revealViewController().rearViewRevealWidth = 200
+        revealViewController().rearViewRevealWidth = 250
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         // Get a reference to the storage service using the default Firebase App

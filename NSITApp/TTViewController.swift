@@ -17,7 +17,7 @@ class TTViewController: UIViewController,UINavigationBarDelegate,UINavigationCon
         super.viewDidLoad()
         
         
-        revealViewController().rearViewRevealWidth = 200
+        revealViewController().rearViewRevealWidth = 250
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
     }

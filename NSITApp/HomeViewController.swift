@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        revealViewController().rearViewRevealWidth = 250
         barButtonMenu.target = revealViewController()
         barButtonMenu.action = #selector(SWRevealViewController.revealToggle(_:))
         
