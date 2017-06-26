@@ -415,10 +415,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-Jq-r2B">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-Jq-r2B">
                                 <rect key="frame" x="0.0" y="126" width="375" height="415"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectsTableViewCell" rowHeight="82" id="G4A-ra-p1K" customClass="SubjectsTableViewCell" customModule="NSITApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="82"/>
@@ -436,6 +437,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="subjectName" destination="rE1-2I-ofC" id="82c-uK-pe3"/>
                                         </connections>
@@ -461,10 +463,10 @@
             </objects>
             <point key="canvasLocation" x="2004" y="-434.03298350824593"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Syllabus View Controller-->
         <scene sceneID="PWx-ya-w9Q">
             <objects>
-                <viewController id="gIp-Zf-vWq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowSyllabusViewController" id="gIp-Zf-vWq" customClass="ShowSyllabusViewController" customModule="NSITApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uMe-9L-NcE"/>
                         <viewControllerLayoutGuide type="bottom" id="Y7q-JN-vbG"/>
@@ -481,9 +483,21 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="399"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zan-5c-foh">
+                                <rect key="frame" x="8" y="28" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="isBackButtonPressed:" destination="gIp-Zf-vWq" eventType="touchUpInside" id="DFP-zb-84o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="zan-5c-foh" id="MUY-Um-lpF"/>
+                        <outlet property="image" destination="8Wo-aU-KEh" id="zlg-Yg-AkX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sj-Tp-CDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

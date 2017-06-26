@@ -21,18 +21,19 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+               
         revealViewController().rearViewRevealWidth = 250
         menu.target = revealViewController()
         menu.action = #selector(SWRevealViewController.revealToggle(_:))
         
-        
+ /*
         // Get a reference to the storage service using the default Firebase App
         let storage = Storage.storage()
         
         // Create a storage reference from our storage service
-        let storageRef = storage.reference()
-        /*
+       let storageRef = storage.reference()
+        
         // Note that you can use variables to create child values
   //      let fileName = "graph.jpg"
  //       let spaceRef = imagesRef.child(fileName)
@@ -83,6 +84,13 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    let VC=UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowSyllabusViewController") as! ShowSyllabusViewController
+        
+        VC.photoLink = Subjects[indexPath.row]
+        
+        self.present(VC, animated: true, completion: nil)
+        
     }
 
 }
