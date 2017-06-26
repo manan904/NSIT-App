@@ -20,6 +20,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboard()
     }
     
     @IBAction func signUpPressed(_ sender: Any) {

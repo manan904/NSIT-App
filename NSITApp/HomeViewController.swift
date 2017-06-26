@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //To display User Name
         let uid = Auth.auth().currentUser?.uid
         ref.child("Users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? [String:AnyObject]
@@ -47,4 +47,16 @@ class HomeViewController: UIViewController {
     }
 
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

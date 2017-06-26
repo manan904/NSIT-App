@@ -19,7 +19,9 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dismissKeyboard()
 
+        
         signInButton.layer.borderWidth = 1
         signInButton.layer.borderColor = UIColor.white.cgColor
         

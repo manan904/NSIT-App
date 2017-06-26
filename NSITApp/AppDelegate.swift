@@ -13,6 +13,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard: UIStoryboard?
     
 
 
@@ -33,6 +34,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         UINavigationBar.appearance().isTranslucent = true
         //End
+        
+     
+       self.storyboard =  UIStoryboard(name: "Main", bundle: Bundle.main)
+        let currentUser = Auth.auth().currentUser
+        if currentUser != nil
+        {
+            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController")
+        }
+        else
+        {
+            self.window?.rootViewController = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController")
+        }
         
         return true
     }
@@ -61,4 +74,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 

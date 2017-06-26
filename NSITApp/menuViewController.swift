@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -15,8 +16,8 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var iconArray:Array = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        MenuNameArray = ["Home","Time Table","Syllabus","Attendance Manager"]
-        iconArray = [UIImage(named:"home")!,UIImage(named:"message")!,UIImage(named:"map")!,UIImage(named:"setting")!]
+        MenuNameArray = ["Home","Time Table","Syllabus","Attendance Manager","Profile"]
+        iconArray = [UIImage(named:"home")!,UIImage(named:"message")!,UIImage(named:"map")!,UIImage(named:"setting")!,UIImage(named:"setting")!]
         
 
     }
@@ -80,4 +81,19 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     }
     
+    @IBAction func logOutButtonIsPressed(_ sender: Any) {
+        
+        do
+        {
+            try Auth.auth().signOut()
+        }
+        catch let error as NSError
+        {
+            print (error.localizedDescription)
+        }
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignInViewController")
+        self.present(vc!, animated: true, completion: nil)
+        
+    }
 }
