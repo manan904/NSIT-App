@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A4EFB0587B76AFD29633CEF /* Pods_NSITApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A5EA4418D6040E0696DB1E1 /* Pods_NSITApp.framework */; };
+		BE3AAA3A1F013CAE0091C7CC /* SubjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3AAA391F013CAE0091C7CC /* SubjectsTableViewCell.swift */; };
 		BE5012301EFB81F100D74D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50122F1EFB81F100D74D9D /* AppDelegate.swift */; };
 		BE5012321EFB81F100D74D9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5012311EFB81F100D74D9D /* HomeViewController.swift */; };
 		BE5012351EFB81F100D74D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5012331EFB81F100D74D9D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0A5EA4418D6040E0696DB1E1 /* Pods_NSITApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NSITApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3AAA391F013CAE0091C7CC /* SubjectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewCell.swift; sourceTree = "<group>"; };
 		BE50122C1EFB81F100D74D9D /* NSITApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSITApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE50122F1EFB81F100D74D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5012311EFB81F100D74D9D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BE3AAA351F0136B60091C7CC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BEA78DBB1EFBE66F00A829D0 /* MenuTableViewCell.swift */,
+				BE3AAA391F013CAE0091C7CC /* SubjectsTableViewCell.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		BE3AAA361F0136C30091C7CC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEA78DB91EFBE63700A829D0 /* menuViewController.swift */,
+				BE5012311EFB81F100D74D9D /* HomeViewController.swift */,
+				BEC91DF61EFCD5320033181F /* SyllabusViewController.swift */,
+				BE960B2C1EFBE9820058414C /* TTViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		BE5012231EFB81F100D74D9D = {
 			isa = PBXGroup;
 			children = (
@@ -90,14 +112,11 @@
 			children = (
 				BEA78DB61EFB99E500A829D0 /* SWRevealViewController.h */,
 				BEA78DB71EFB99E500A829D0 /* SWRevealViewController.m */,
-				BEC91DF61EFCD5320033181F /* SyllabusViewController.swift */,
 				BE50122F1EFB81F100D74D9D /* AppDelegate.swift */,
-				BE5012311EFB81F100D74D9D /* HomeViewController.swift */,
 				BE5012331EFB81F100D74D9D /* Main.storyboard */,
 				BEABD3EB1EFD93C600F4AE2D /* Welcome Views */,
-				BEA78DB91EFBE63700A829D0 /* menuViewController.swift */,
-				BE960B2C1EFBE9820058414C /* TTViewController.swift */,
-				BEA78DBB1EFBE66F00A829D0 /* MenuTableViewCell.swift */,
+				BE3AAA361F0136C30091C7CC /* View Controllers */,
+				BE3AAA351F0136B60091C7CC /* Classes */,
 				BE5012361EFB81F100D74D9D /* Assets.xcassets */,
 				BE5012381EFB81F100D74D9D /* LaunchScreen.storyboard */,
 				BE50123B1EFB81F100D74D9D /* Info.plist */,
@@ -250,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE3AAA3A1F013CAE0091C7CC /* SubjectsTableViewCell.swift in Sources */,
 				BE5012321EFB81F100D74D9D /* HomeViewController.swift in Sources */,
 				BEC91DF71EFCD5320033181F /* SyllabusViewController.swift in Sources */,
 				BEABD3E81EFD904F00F4AE2D /* SignUpViewController.swift in Sources */,
