@@ -7,14 +7,34 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+
+
 
 class HomeViewController: UIViewController {
+    
+   let ref = Database.database().reference()
 
     @IBOutlet weak var barButtonMenu: UIBarButtonItem!
+    @IBOutlet weak var welcomeText: UILabel!
+    
+    var displayName:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let uid = Auth.auth().currentUser?.uid
+        ref.child("Users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? [String:AnyObject]
+            self.displayName = value?["Name"] as? String ?? ""
+            print (self.displayName)
+            self.welcomeText.text = "Hi " + self.displayName + " !"
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+
         revealViewController().rearViewRevealWidth = 250
         barButtonMenu.target = revealViewController()
         barButtonMenu.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -28,4 +48,3 @@ class HomeViewController: UIViewController {
 
 
 }
-
