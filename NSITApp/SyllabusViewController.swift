@@ -19,6 +19,7 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
     
     var Subjects:Array = [String]()
     var SubjectRef:Array = [String]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,19 +59,30 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
 */
          let userReference = self.databaseRef.child("Syllabus").child("IT")
         
-        let values = ["1":"1.png" , "2":"2.png" , "3":"3.png" , "4":"4.png" , "5":"5.png"]
+   //     let values = ["1":"1.png" , "2":"2.png" , "3":"3.png" , "4":"4.png" , "5":"5.png"]
+           var values:NSDictionary = [:]
         
-        userReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
+        userReference.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            values = (snapshot.value as? NSDictionary)!
+            self.Subjects = Array(values.allKeys) as! [String]
+            print(self.Subjects)
+            self.SubjectRef = Array(values.allValues) as! [String]
+            print(self.SubjectRef)
+            print(values)
+            [self.tableView .reloadData()]
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+       /* userReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
             if error != nil {
                 print (error!)
                 return
             }
-        })
-        
-        Subjects = Array(values.keys)
-        SubjectRef = Array(values.values)
-        
+        }) */
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Subjects.count
