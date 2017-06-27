@@ -18,6 +18,7 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
     let databaseRef = Database.database().reference()
     
     var Subjects:Array = [String]()
+    var SubjectRef:Array = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +67,8 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
             }
         })
         
-        Subjects = ["1.png" , "2.png" , "3.png" , "4.png" , "5.png"]
+        Subjects = Array(values.keys)
+        SubjectRef = Array(values.values)
         
     }
     
@@ -87,7 +89,7 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
         
     let VC=UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowSyllabusViewController") as! ShowSyllabusViewController
         
-        VC.photoLink = Subjects[indexPath.row]
+        VC.photoLink = SubjectRef[indexPath.row]
         
         self.present(VC, animated: true, completion: nil)
         
