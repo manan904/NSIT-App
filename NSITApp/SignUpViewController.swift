@@ -10,25 +10,35 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+
+class SignUpViewController: UIViewController{
     
     let databaseRef = Database.database().reference()
     
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var rollNo: UITextField!
+    @IBOutlet weak var branch: UITextField!
+    @IBOutlet weak var section: UITextField!
+    @IBOutlet weak var emailID: UITextField!
     @IBOutlet weak var password: UITextField!
+
+    var pickerData: [String] = [String]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dismissKeyboard()
+        self.hideKeyboard()
     }
     
     @IBAction func signUpPressed(_ sender: Any) {
         
         let firstName = self.firstName.text
-        let email = self.rollNo.text
+        let email = self.emailID.text
+        let rollNo = self.rollNo.text
+        let branch = self.branch.text
+        let section = self.section.text
         
-        Auth.auth().createUser(withEmail: rollNo.text!, password: password.text!) { (user, error) in
+        Auth.auth().createUser(withEmail: emailID.text!, password: password.text!) { (user, error) in
             
             if error == nil {
                 print("You have successfully signed up")
@@ -40,10 +50,12 @@ class SignUpViewController: UIViewController {
                 
                 let userReference = self.databaseRef.child("Users").child(uid)
                 
-                let values = ["Name": firstName , "email": email]
+                let values = ["Name": firstName , "Email": email , "RollNo": rollNo , "Branch": branch , "Section": section]
+                
+                self.pickerData = ["COE", "IT", "ECE", "ICE", "MPAE", "ME","BT"]
                 
                 
-                userReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
+                userReference.updateChildValues(values as Any as! [AnyHashable : Any], withCompletionBlock: { (error, ref) in
                     if error != nil {
                         print (error!)
                         return
@@ -61,8 +73,25 @@ class SignUpViewController: UIViewController {
                 
                 self.present(alertController, animated: true, completion: nil)
             }
-        
+        }
     }
 }
 
+extension UIViewController
+{
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
+    
 }

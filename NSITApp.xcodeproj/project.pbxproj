@@ -12,7 +12,6 @@
 		BE3AAA3E1F014E740091C7CC /* ShowSyllabusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3AAA3D1F014E740091C7CC /* ShowSyllabusViewController.swift */; };
 		BE5012301EFB81F100D74D9D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50122F1EFB81F100D74D9D /* AppDelegate.swift */; };
 		BE5012321EFB81F100D74D9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5012311EFB81F100D74D9D /* HomeViewController.swift */; };
-		BE5012351EFB81F100D74D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5012331EFB81F100D74D9D /* Main.storyboard */; };
 		BE5012371EFB81F100D74D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5012361EFB81F100D74D9D /* Assets.xcassets */; };
 		BE50123A1EFB81F100D74D9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5012381EFB81F100D74D9D /* LaunchScreen.storyboard */; };
 		BE960B2D1EFBE9820058414C /* TTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE960B2C1EFBE9820058414C /* TTViewController.swift */; };
@@ -23,6 +22,7 @@
 		BEABD3EA1EFD905E00F4AE2D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEABD3E91EFD905E00F4AE2D /* SignInViewController.swift */; };
 		BEC91DF71EFCD5320033181F /* SyllabusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC91DF61EFCD5320033181F /* SyllabusViewController.swift */; };
 		BEC91DF91EFCE39B0033181F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEC91DF81EFCE39B0033181F /* GoogleService-Info.plist */; };
+		BEED8B741F0233D900E4A5EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEED8B731F0233D900E4A5EC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		BE50122C1EFB81F100D74D9D /* NSITApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSITApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE50122F1EFB81F100D74D9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5012311EFB81F100D74D9D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		BE5012341EFB81F100D74D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE5012361EFB81F100D74D9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE5012391EFB81F100D74D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE50123B1EFB81F100D74D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		BEABD3E91EFD905E00F4AE2D /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BEC91DF61EFCD5320033181F /* SyllabusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyllabusViewController.swift; sourceTree = "<group>"; };
 		BEC91DF81EFCE39B0033181F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BEED8B731F0233D900E4A5EC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E554394F35ED357868E40BC1 /* Pods-NSITApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NSITApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-NSITApp/Pods-NSITApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +109,7 @@
 		BE3AAA3C1F014B5B0091C7CC /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				BE5012331EFB81F100D74D9D /* Main.storyboard */,
+				BEED8B731F0233D900E4A5EC /* Main.storyboard */,
 				BE5012381EFB81F100D74D9D /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
@@ -229,7 +229,7 @@
 				BE50123A1EFB81F100D74D9D /* LaunchScreen.storyboard in Resources */,
 				BEC91DF91EFCE39B0033181F /* GoogleService-Info.plist in Resources */,
 				BE5012371EFB81F100D74D9D /* Assets.xcassets in Resources */,
-				BE5012351EFB81F100D74D9D /* Main.storyboard in Resources */,
+				BEED8B741F0233D900E4A5EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +305,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE5012331EFB81F100D74D9D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE5012341EFB81F100D74D9D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BE5012381EFB81F100D74D9D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
