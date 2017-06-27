@@ -12,9 +12,20 @@ import Firebase
 class ShowSyllabusViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
+    
+    
     var photoLink:String?
     
+    
     @IBOutlet weak var backButton: UIButton!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +54,30 @@ class ShowSyllabusViewController: UIViewController {
             }
         }
 }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        updateMinZoomScaleForSize(view.bounds.size)
+    }
+    
+    fileprivate func updateMinZoomScaleForSize(_ size: CGSize) {
+        let widthScale = size.width / image.bounds.width
+        let heightScale = size.height / image.bounds.height
+        let minScale = min(widthScale, heightScale)
+        
+        scrollView.minimumZoomScale = minScale
+        scrollView.zoomScale = minScale
+    }
+    
     @IBAction func isBackButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
+    }
+}
+
+
+extension ShowSyllabusViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return image
     }
 }
