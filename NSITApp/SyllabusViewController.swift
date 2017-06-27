@@ -66,9 +66,7 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
             // Get user value
             values = (snapshot.value as? NSDictionary)!
             self.Subjects = Array(values.allKeys) as! [String]
-            print(self.Subjects)
             self.SubjectRef = Array(values.allValues) as! [String]
-            print(self.SubjectRef)
             print(values)
             [self.tableView .reloadData()]
         }) { (error) in

@@ -469,7 +469,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-Jq-r2B">
-                                <rect key="frame" x="0.0" y="126" width="375" height="415"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="541"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -484,8 +484,8 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-2I-ofC">
                                                     <rect key="frame" x="20" y="19" width="217" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -528,14 +528,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-E0-e4c">
-                                <rect key="frame" x="0.0" y="20" width="47" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="isBackButtonPressed:" destination="gIp-Zf-vWq" eventType="touchUpInside" id="yrV-fA-rSh"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="79S-zx-gIm">
                                 <rect key="frame" x="0.0" y="108" width="375" height="399"/>
                                 <subviews>
@@ -555,11 +547,19 @@
                                     <outlet property="delegate" destination="gIp-Zf-vWq" id="2EK-xe-2Dr"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-E0-e4c">
+                                <rect key="frame" x="16" y="20" width="47" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="isBackButtonPressed:" destination="gIp-Zf-vWq" eventType="touchUpInside" id="yrV-fA-rSh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Y7q-JN-vbG" firstAttribute="top" secondItem="79S-zx-gIm" secondAttribute="bottom" constant="160" id="5ON-yB-kY4"/>
-                            <constraint firstItem="79S-zx-gIm" firstAttribute="leading" secondItem="tPJ-E0-e4c" secondAttribute="leading" id="XNh-9t-oJ6"/>
+                            <constraint firstItem="79S-zx-gIm" firstAttribute="leading" secondItem="tPJ-E0-e4c" secondAttribute="leading" constant="-16" id="XNh-9t-oJ6"/>
                             <constraint firstItem="79S-zx-gIm" firstAttribute="leading" secondItem="3no-hz-lKP" secondAttribute="leading" id="YrV-mN-1mk"/>
                             <constraint firstItem="79S-zx-gIm" firstAttribute="top" secondItem="3no-hz-lKP" secondAttribute="top" constant="108" id="a6u-td-Cfc"/>
                             <constraint firstAttribute="trailing" secondItem="79S-zx-gIm" secondAttribute="trailing" id="b3k-5Q-pkL"/>
