@@ -44,9 +44,7 @@ class ShowSyllabusViewController: UIViewController {
         }
 }
     @IBAction func isBackButtonPressed(_ sender: Any) {
-        
-        let VC=UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SyllabusViewController") as! SyllabusViewController
-        self.present(VC, animated: true, completion: nil)
-
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }

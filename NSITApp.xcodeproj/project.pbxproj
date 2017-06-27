@@ -23,6 +23,7 @@
 		BEC91DF71EFCD5320033181F /* SyllabusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC91DF61EFCD5320033181F /* SyllabusViewController.swift */; };
 		BEC91DF91EFCE39B0033181F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEC91DF81EFCE39B0033181F /* GoogleService-Info.plist */; };
 		BEED8B741F0233D900E4A5EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEED8B731F0233D900E4A5EC /* Main.storyboard */; };
+		BEED8B761F02786000E4A5EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEED8B751F02786000E4A5EC /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		BEC91DF61EFCD5320033181F /* SyllabusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyllabusViewController.swift; sourceTree = "<group>"; };
 		BEC91DF81EFCE39B0033181F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BEED8B731F0233D900E4A5EC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BEED8B751F02786000E4A5EC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E554394F35ED357868E40BC1 /* Pods-NSITApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NSITApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-NSITApp/Pods-NSITApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 			children = (
 				BEA78DB91EFBE63700A829D0 /* menuViewController.swift */,
 				BE3AAA3D1F014E740091C7CC /* ShowSyllabusViewController.swift */,
+				BEED8B751F02786000E4A5EC /* ProfileViewController.swift */,
 				BE5012311EFB81F100D74D9D /* HomeViewController.swift */,
 				BEC91DF61EFCD5320033181F /* SyllabusViewController.swift */,
 				BE960B2C1EFBE9820058414C /* TTViewController.swift */,
@@ -294,6 +297,7 @@
 				BEABD3E81EFD904F00F4AE2D /* SignUpViewController.swift in Sources */,
 				BE5012301EFB81F100D74D9D /* AppDelegate.swift in Sources */,
 				BEA78DB81EFB99E500A829D0 /* SWRevealViewController.m in Sources */,
+				BEED8B761F02786000E4A5EC /* ProfileViewController.swift in Sources */,
 				BEABD3EA1EFD905E00F4AE2D /* SignInViewController.swift in Sources */,
 				BEA78DBA1EFBE63700A829D0 /* menuViewController.swift in Sources */,
 				BE3AAA3E1F014E740091C7CC /* ShowSyllabusViewController.swift in Sources */,
