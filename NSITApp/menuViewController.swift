@@ -17,7 +17,7 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         MenuNameArray = ["Home","Time Table","Syllabus","Attendance Manager","Profile"]
-        iconArray = [UIImage(named:"home")!,UIImage(named:"message")!,UIImage(named:"map")!,UIImage(named:"setting")!,UIImage(named:"setting")!]
+        iconArray = [UIImage(named:"home")!,UIImage(named:"message")!,UIImage(named:"map")!,UIImage(named:"attendance")!,UIImage(named:"settings")!]
         
 
     }
@@ -78,6 +78,17 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if cell.lblMenuName.text! == "Setting"
         {
             print("setting Tapped")
+        }
+        
+        if cell.lblMenuName.text! == "Profile"
+        {
+            print("Profile Tapped")
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            
         }
     }
     

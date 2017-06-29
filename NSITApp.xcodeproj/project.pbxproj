@@ -14,6 +14,7 @@
 		BE5012321EFB81F100D74D9D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5012311EFB81F100D74D9D /* HomeViewController.swift */; };
 		BE5012371EFB81F100D74D9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5012361EFB81F100D74D9D /* Assets.xcassets */; };
 		BE50123A1EFB81F100D74D9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5012381EFB81F100D74D9D /* LaunchScreen.storyboard */; };
+		BE5AD3531F0500B300021768 /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD3521F0500B300021768 /* AttendanceViewController.swift */; };
 		BE960B2D1EFBE9820058414C /* TTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE960B2C1EFBE9820058414C /* TTViewController.swift */; };
 		BEA78DB81EFB99E500A829D0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEA78DB71EFB99E500A829D0 /* SWRevealViewController.m */; };
 		BEA78DBA1EFBE63700A829D0 /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA78DB91EFBE63700A829D0 /* menuViewController.swift */; };
@@ -36,6 +37,7 @@
 		BE5012361EFB81F100D74D9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE5012391EFB81F100D74D9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE50123B1EFB81F100D74D9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5AD3521F0500B300021768 /* AttendanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		BE8F9282D62FE246CA6519B2 /* Pods-NSITApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NSITApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NSITApp/Pods-NSITApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BE960B2C1EFBE9820058414C /* TTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTViewController.swift; sourceTree = "<group>"; };
 		BEA78DB51EFB99E400A829D0 /* NSITApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSITApp-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA78DB91EFBE63700A829D0 /* menuViewController.swift */,
+				BE5AD3521F0500B300021768 /* AttendanceViewController.swift */,
 				BE3AAA3D1F014E740091C7CC /* ShowSyllabusViewController.swift */,
 				BEED8B751F02786000E4A5EC /* ProfileViewController.swift */,
 				BE5012311EFB81F100D74D9D /* HomeViewController.swift */,
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE5AD3531F0500B300021768 /* AttendanceViewController.swift in Sources */,
 				BE3AAA3A1F013CAE0091C7CC /* SubjectsTableViewCell.swift in Sources */,
 				BE5012321EFB81F100D74D9D /* HomeViewController.swift in Sources */,
 				BEC91DF71EFCD5320033181F /* SyllabusViewController.swift in Sources */,
