@@ -696,24 +696,12 @@ const int FrontViewPositionNone = 0xff;
 
 - (void)loadView
 {
-    // Do not call super, to prevent the apis from unfruitful looking for inexistent xibs!
-    //[super loadView];
-    
-    // load any defined front/rear controllers from the storyboard before
     [self loadStoryboardControllers];
-    
-    // This is what Apple used to tell us to set as the initial frame, which is of course totally irrelevant
-    // with view controller containment patterns, let's leave it for the sake of it!
-    // CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    
-    // On iOS7 the applicationFrame does not return the whole screen. This is possibly a bug.
-    // As a workaround we use the screen bounds, this still works on iOS6, any zero based frame would work anyway!
     CGRect frame = [[UIScreen mainScreen] bounds];
 
     // create a custom content view for the controller
     _contentView = [[SWRevealView alloc] initWithFrame:frame controller:self];
     
-    // set the content view to resize along with its superview
     [_contentView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
     
     // set the content view to clip its bounds if requested
@@ -725,8 +713,6 @@ const int FrontViewPositionNone = 0xff;
     // Apple also tells us to do this:
     _contentView.backgroundColor = [UIColor blackColor];
     
-    // we set the current frontViewPosition to none before seting the
-    // desired initial position, this will force proper controller reload
     FrontViewPosition initialPosition = _frontViewPosition;
     _frontViewPosition = FrontViewPositionNone;
     _rearViewPosition = FrontViewPositionNone;
@@ -740,24 +726,6 @@ const int FrontViewPositionNone = 0xff;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
-    // Uncomment the following code if you want the child controllers
-    // to be loaded at this point.
-    //
-    // We leave this commented out because we think loading childs here is conceptually wrong.
-    // Instead, we refrain view loads until necesary, for example we may never load
-    // the rear controller view -or the front controller view- if it is never displayed.
-    //
-    // If you need to manipulate views of any of your child controllers in an override
-    // of this method, you can load yourself the views explicitly on your overriden method.
-    // However we discourage it as an app following the MVC principles should never need to do so
-        
-//  [_frontViewController view];
-//  [_rearViewController view];
-
-    // we store at this point the view's user interaction state as we may temporarily disable it
-    // and resume it back to the previous state, it is possible to override this behaviour by
-    // intercepting it on the panGestureBegan and panGestureEnded delegates
     _userInteractionStore = _contentView.userInteractionEnabled;
 }
 
@@ -1086,9 +1054,6 @@ const int FrontViewPositionNone = 0xff;
     }
 }
 
-// Removes the top most block in the queue and executes the following one if any.
-// Calls to this method must be paired with calls to _enqueueBlock, particularly it may be called
-// from within a block passed to _enqueueBlock to remove itself when done with animations.  
 - (void)_dequeue
 {
     [_animationQueue removeLastObject];
@@ -1223,10 +1188,6 @@ const int FrontViewPositionNone = 0xff;
 
 - (void)_handleRevealGestureStateBeganWithRecognizer:(UIPanGestureRecognizer *)recognizer
 {
-    // we know that we will not get here unless the animationQueue is empty because the recognizer
-    // delegate prevents it, however we do not want any forthcoming programatic actions to disturb
-    // the gesture, so we just enqueue a dummy block to ensure any programatic acctions will be
-    // scheduled after the gesture is completed
     [self _enqueueBlock:^{}]; // <-- dummy block
 
     // we store the initial position and initialize a target position
@@ -1406,9 +1367,6 @@ const int FrontViewPositionNone = 0xff;
     {
         // Calling this in the animation block causes the status bar to appear/dissapear in sync with our own animation
         [self setNeedsStatusBarAppearanceUpdate];
-        
-        // We call the layoutSubviews method on the contentView view and send a delegate, which will
-        // occur inside of an animation block if any animated transition is being performed
         [_contentView layoutSubviews];
     
         if ([_delegate respondsToSelector:@selector(revealController:animateToPosition:)])
@@ -1443,9 +1401,6 @@ const int FrontViewPositionNone = 0xff;
     }
 }
 
-
-// Primitive method for animated controller transition
-//- (void)_performTransitionToViewController:(UIViewController*)new operation:(SWRevealControllerOperation)operation animated:(BOOL)animated
 - (void)_performTransitionOperation:(SWRevealControllerOperation)operation withViewController:(UIViewController*)new animated:(BOOL)animated
 {
     if ( [_delegate respondsToSelector:@selector(revealController:willAddViewController:forOperation:animated:)] )
