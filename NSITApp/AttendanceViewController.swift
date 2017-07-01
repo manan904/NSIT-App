@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwipeCellKit
 
 class AttendanceViewController: UIViewController,UINavigationBarDelegate,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource {
 
@@ -40,7 +41,7 @@ class AttendanceViewController: UIViewController,UINavigationBarDelegate,UINavig
             self.Subjects = Array(values.allKeys) as! [String]
             self.SubjectRef = Array(values.allValues) as! [String]
             print(values)
-            [self.tableView .reloadData()]
+            self.tableView .reloadData()
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -55,12 +56,15 @@ class AttendanceViewController: UIViewController,UINavigationBarDelegate,UINavig
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttendanceTableViewCell", for: indexPath) as! AttendanceTableViewCell
+        cell.delegate = self
         
         cell.subjectName.text! = Subjects[indexPath.row]
         cell.percentage.text! = "0%"
         
         return cell
     }
+    
+    
     
    /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -72,4 +76,27 @@ class AttendanceViewController: UIViewController,UINavigationBarDelegate,UINavig
         
     }*/
 
+}
+
+extension AttendanceViewController:SwipeTableViewCellDelegate {
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+        }
+        
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "delete")
+        
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
+        var options = SwipeTableOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
+    }
 }

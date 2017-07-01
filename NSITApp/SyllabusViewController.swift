@@ -68,7 +68,7 @@ class SyllabusViewController: UIViewController,UINavigationBarDelegate,UINavigat
             self.Subjects = Array(values.allKeys) as! [String]
             self.SubjectRef = Array(values.allValues) as! [String]
             print(values)
-            [self.tableView .reloadData()]
+            self.tableView .reloadData()
         }) { (error) in
             print(error.localizedDescription)
         }

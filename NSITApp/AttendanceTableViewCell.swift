@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class AttendanceTableViewCell: UITableViewCell {
+class AttendanceTableViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var subjectName: UILabel!
     @IBOutlet weak var percentage: UILabel!
