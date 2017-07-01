@@ -68,7 +68,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VFU-XZ-oXH" kind="presentation" identifier="signUp" modalPresentationStyle="formSheet" id="DZB-xA-NwS"/>
+                                    <segue destination="VFU-XZ-oXH" kind="presentation" identifier="signUp" modalPresentationStyle="pageSheet" modalTransitionStyle="partialCurl" id="DZB-xA-NwS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New User?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hny-8v-wiT">
@@ -727,10 +727,10 @@
             </objects>
             <point key="canvasLocation" x="2561" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Attendance View Controller-->
         <scene sceneID="vdA-Ch-5EG">
             <objects>
-                <viewController id="emM-e2-o3E" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AttendanceViewController" id="emM-e2-o3E" customClass="AttendanceViewController" customModule="NSITApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lA5-Hf-zeT"/>
                         <viewControllerLayoutGuide type="bottom" id="hFP-6T-QD3"/>
@@ -755,7 +755,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="63" id="Ohj-Fd-3YU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AttendanceTableViewCell" rowHeight="63" id="Ohj-Fd-3YU" customClass="AttendanceTableViewCell" customModule="NSITApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ohj-Fd-3YU" id="V2b-co-aB5">
@@ -779,12 +779,27 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="percentage" destination="P93-NZ-yHI" id="egF-5O-bj7"/>
+                                            <outlet property="subjectName" destination="K7C-yS-mvj" id="k7y-gz-ou6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="emM-e2-o3E" id="dai-qz-8PN"/>
+                                    <outlet property="delegate" destination="emM-e2-o3E" id="uy3-9t-W2u"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="X9l-gy-JNC">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="M1I-Gk-Dwt"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menu" destination="M1I-Gk-Dwt" id="iP3-2A-cep"/>
+                        <outlet property="tableView" destination="8nj-OB-B5T" id="BLt-br-0Jn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9q-J4-oQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

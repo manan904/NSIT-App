@@ -90,6 +90,18 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
             
         }
+        
+        if cell.lblMenuName.text! == "Attendance Manager"
+        {
+            print("Attendance Tapped")
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewcontroller = mainstoryboard.instantiateViewController(withIdentifier: "AttendanceViewController") as! AttendanceViewController
+            let newFrontController = UINavigationController.init(rootViewController: newViewcontroller)
+            
+            revealviewcontroller.pushFrontViewController(newFrontController, animated: true)
+            
+        }
+
     }
     
     @IBAction func logOutButtonIsPressed(_ sender: Any) {
