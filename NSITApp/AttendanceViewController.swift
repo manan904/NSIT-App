@@ -62,9 +62,10 @@ class AttendanceViewController: UIViewController,UINavigationBarDelegate,UINavig
         cell.percentage.text! = "0%"
         
         return cell
+    
     }
     
-    
+
     
    /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -83,19 +84,30 @@ extension AttendanceViewController:SwipeTableViewCellDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else { return nil }
         
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+      /*  let delete = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
         }
+        delete.image = UIImage(named: "delete") */
         
-        // customize the action appearance
-        deleteAction.image = UIImage(named: "delete")
+        let subtract = SwipeAction(style: .default, title: "Absent") { action, indexPath in
+            // handle action by updating model with deletion
+        }
+        subtract.image = UIImage(named: "minus")
+        subtract.backgroundColor = UIColor.red
         
-        return [deleteAction]
+        let add = SwipeAction(style: .default, title: "Present") { action, indexPath in
+            // handle action by updating model with deletion
+        }
+        add.image = UIImage(named: "plus")
+        add.backgroundColor = UIColor.green
+        
+        return [subtract,add]
+
     }
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeTableOptions {
         var options = SwipeTableOptions()
-        options.expansionStyle = .destructive
+        options.expansionStyle = .selection
         options.transitionStyle = .border
         return options
     }
