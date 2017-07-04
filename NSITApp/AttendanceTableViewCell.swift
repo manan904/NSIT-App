@@ -13,6 +13,8 @@ class AttendanceTableViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var subjectName: UILabel!
     @IBOutlet weak var percentage: UILabel!
-
+    
 
 }
+
+

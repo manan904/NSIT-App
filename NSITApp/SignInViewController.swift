@@ -19,7 +19,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dismissKeyboard()
+        self.hideKeyboard()
 
         
         signInButton.layer.borderWidth = 1

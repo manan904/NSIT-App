@@ -20,7 +20,9 @@ class AttendanceViewController: UIViewController,UINavigationBarDelegate,UINavig
     
     var Subjects:Array = [String]()
     var SubjectRef:Array = [String]()
-
+    var present:Array = [0,0,0,0,0]
+    var absent:Array = [0,0,0,0,0]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +61,20 @@ class AttendanceViewController: UIViewController,UINavigationBarDelegate,UINavig
         cell.delegate = self
         
         cell.subjectName.text! = Subjects[indexPath.row]
-        cell.percentage.text! = "0%"
-        
+        cell.percentage.text! = String(perc(present: present[indexPath.row], absent: absent[indexPath.row])) + "%"
+        //cell.percentage.text! = String(perc(present: cell.Present[indexPath.row], absent: cell.Absent[indexPath.row])) + " %"
         return cell
     
+    }
+    
+    func perc(present: Int , absent:Int) -> Int {
+        if present+absent != 0 {
+        let perc = present*100/(present+absent)
+        return perc
+        }
+        else {
+            return 0
+        }
     }
     
 
@@ -90,13 +102,16 @@ extension AttendanceViewController:SwipeTableViewCellDelegate {
         delete.image = UIImage(named: "delete") */
         
         let subtract = SwipeAction(style: .default, title: "Absent") { action, indexPath in
-            // handle action by updating model with deletion
+           self.absent[indexPath.row] += 1
+            self.tableView.reloadData()
         }
         subtract.image = UIImage(named: "minus")
         subtract.backgroundColor = UIColor.red
         
         let add = SwipeAction(style: .default, title: "Present") { action, indexPath in
-            // handle action by updating model with deletion
+            
+        self.present[indexPath.row] += 1
+            self.tableView.reloadData()
         }
         add.image = UIImage(named: "plus")
         add.backgroundColor = UIColor.green

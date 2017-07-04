@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Database.database().isPersistenceEnabled = true
         //End
         
+        
         //Making Navigation bar transparent!! :)
         
         // Sets background to a blank/empty image
